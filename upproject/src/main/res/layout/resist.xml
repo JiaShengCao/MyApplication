@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:background="#ffffff"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_weight="0.8"
+        android:layout_gravity="center"
+        android:src="@mipmap/denglu1"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="#898787"
+            android:layout_marginLeft="20dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:textSize="15sp"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_selector"
+            android:hint="请输入用户名"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/username"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="密码"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:background="@drawable/edittext_selector"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:hint="请输入密码"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:password="true"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="30dp"
+        android:background="#13dcd6"
+        android:layout_gravity="center"
+        android:text="登 录"
+        android:textColor="#ffffff"
+        android:id="@+id/resist"
+        android:layout_width="350dp"
+        android:layout_height="60dp"/>
+
+</LinearLayout>
+</LinearLayout>

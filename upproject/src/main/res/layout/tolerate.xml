@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="      容忍度指的是用户允许用电器在已定时间后开启的最大时间"/>
+
+            <RadioGroup
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:id="@+id/group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tolerate1"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="容忍级别1"/>
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tolerate2"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="容忍级别2"/>
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tolerate3"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="容忍级别3"/>
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tolerate4"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="容忍级别4"/>
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tolerate5"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="容忍级别5"/>
+            </RadioGroup>
+</LinearLayout>
