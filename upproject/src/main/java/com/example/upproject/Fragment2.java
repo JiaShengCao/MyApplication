@@ -16,6 +16,7 @@ import android.widget.Toast;
 //功能待定
 public class Fragment2 extends Fragment implements View.OnClickListener{
     private View view;
+    private StatisticsView zhexian;
     private ImageButton model1;//立即开启模式
     private ImageButton model2;//定时开启模式
 
@@ -30,9 +31,13 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         init();
+        zhexian.setBottomStr(new String[]{"星期一","星期二","星期三","星期四","星期五","星期六","星期天"});
+        zhexian.setValues(new float[]{10f,90f,33f,66f,42f,99f,0f});
     }
 
     private void init() {
+        zhexian= (StatisticsView) view.findViewById(R.id.statisticsView);
+
         model1= (ImageButton) view.findViewById(R.id.model1);
         model2= (ImageButton) view.findViewById(R.id.model2);
 
