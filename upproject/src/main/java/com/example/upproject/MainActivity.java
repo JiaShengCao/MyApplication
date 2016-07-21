@@ -43,13 +43,6 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Window window = getWindow();
-
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams
-                .FLAG_TRANSLUCENT_STATUS);
-
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams
-                .FLAG_TRANSLUCENT_NAVIGATION);
         setContentView(R.layout.activity_main);
         initTableLine();
         initView();

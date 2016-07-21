@@ -18,8 +18,7 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
     private View view;
     private ImageButton model1;//立即开启模式
     private ImageButton model2;//定时开启模式
-    private ImageButton model3;//节能模式
-    private ImageButton model4;//调度模式
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,12 +35,10 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
     private void init() {
         model1= (ImageButton) view.findViewById(R.id.model1);
         model2= (ImageButton) view.findViewById(R.id.model2);
-        model3= (ImageButton) view.findViewById(R.id.model3);
-        model4= (ImageButton) view.findViewById(R.id.model4);
+
         model1.setOnClickListener(this);
         model2.setOnClickListener(this);
-        model3.setOnClickListener(this);
-        model4.setOnClickListener(this);
+
     }
 
     @Override
@@ -54,14 +51,6 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
             case R.id.model2:
                 Intent intent2=new Intent(getActivity(),Model2.class);
                 startActivity(intent2);
-                break;
-            case R.id.model3:
-                Intent intent3=new Intent(getActivity(),Model3.class);
-                startActivity(intent3);
-                break;
-            case R.id.model4:
-                Intent intent4=new Intent(getActivity(),Model4.class);
-                startActivity(intent4);
                 break;
         }
     }

@@ -2,105 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#333333"
-              android:gravity="center"
               android:orientation="vertical">
 
+    <TextView
+        android:background="#e6e6e6"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="智能控制"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+
     <LinearLayout
+        android:background="#00c170"
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </LinearLayout>
+    <LinearLayout
+        android:background="#e6e6e6"
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:src="@mipmap/ic_launcher">
-
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <ImageButton
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
                 android:id="@+id/model1"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@mipmap/model"/>
             <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#fff"
-                android:text="立即开启模式"
+                android:textColor="#060606"
+                android:text="自主调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher">
 
             <ImageButton
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
                 android:id="@+id/model2"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@mipmap/model2"/>
             <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#fff"
-                android:text="定时开启模式"
+                android:textColor="#000000"
+                android:text="优化调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:src="@mipmap/ic_launcher">
-
-            <ImageButton
-                android:id="@+id/model3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:background="@mipmap/model3"/>
-            <TextView
-                android:gravity="center"
-                android:textColor="#fff"
-                android:text="节能模式"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:src="@mipmap/ic_launcher">
-
-            <ImageButton
-                android:id="@+id/model4"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:background="@mipmap/model4"/>
-            <TextView
-                android:gravity="center"
-                android:textColor="#fff"
-                android:text="调度模式"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
