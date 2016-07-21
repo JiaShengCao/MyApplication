@@ -143,10 +143,15 @@ public class FirstListItem extends Activity {
                         e.printStackTrace();
                     }
                     replay = text.getReplayfromserver();
-                    replay= (String) replay.subSequence(0,1);
-                    Message message2 = handler.obtainMessage();
-                    message2.what = 2;
-                    handler.sendMessage(message2);
+                    if(replay!=null) {
+                        replay= (String) replay.subSequence(0,1);
+                        Message message2 = handler.obtainMessage();
+                        message2.what = 2;
+                        handler.sendMessage(message2);
+                    }
+                    else{
+                        //此处输出提示，请连接网络
+                    }
                 }
             }
         });
