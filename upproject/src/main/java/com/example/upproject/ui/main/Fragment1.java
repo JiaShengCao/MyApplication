@@ -1,33 +1,29 @@
-package com.example.upproject;
+package com.example.upproject.ui.main;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.ListFragment;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.upproject.ui.main.ui_ietm_list.FirstListItem;
+import com.example.upproject.ui.main.ui_ietm_list.ListIitem5;
+import com.example.upproject.ui.main.ui_ietm_list.Listitem4;
+import com.example.upproject.R;
+import com.example.upproject.ui.main.ui_ietm_list.SecondListItem;
+import com.example.upproject.ui.main.ui_ietm_list.ThirdListItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by cjs on 2016/3/2.

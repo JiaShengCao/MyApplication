@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -105,32 +107,41 @@ public class StatisticsView extends View {
 
         maxValue =array.getInt(R.styleable.StatisticsView_maxValue,100);
         dividerCount = array.getInt(R.styleable.StatisticsView_dividerCount,10);
-        title = array.getString(R.styleable.StatisticsView_viewTitle);
-        if (TextUtils.isEmpty(title)){
-            title = "";
-        }
+//        title = array.getString(R.styleable.StatisticsView_viewTitle);
+//        if (TextUtils.isEmpty(title)){
+//            title = "";
+//        }
 
+        int pathcolor = array.getColor(R.styleable.StatisticsView_pathColor,Color.BLACK);
         int lineColor = array.getColor(R.styleable.StatisticsView_lineColor,Color.BLACK);
-        int textColor =array.getColor(R.styleable.StatisticsView_textColor,Color.BLACK);
+        int textColor = array.getColor(R.styleable.StatisticsView_textColor,Color.BLACK);
 
         mBorderPaint = new Paint();
         circlePaint = new Paint();
         mPathPaint = new Paint();
 
 
-        mBorderPaint.setAntiAlias(true);//设置平滑的边缘
-        mBorderPaint.setColor(lineColor);
-        mBorderPaint.setStrokeWidth(1);
         mBorderPaint.setStyle(Paint.Style.STROKE);
+        mBorderPaint.setAntiAlias(true);//设置平滑的边缘
+        PathEffect effect=new DashPathEffect(new float[]{8,8,8,8},1);//这两句用于实线变虚线
+        mBorderPaint.setPathEffect(effect);
+        mBorderPaint.setColor(lineColor);
+        mBorderPaint.setAlpha(50);
+        mBorderPaint.setStrokeWidth(1);
+
 
         mPathPaint.setAntiAlias(true);
+        mPathPaint.setColor(pathcolor);
         mPathPaint.setStyle(Paint.Style.STROKE);
-        mPathPaint.setStrokeWidth(3);
+        mPathPaint.setStrokeWidth(10);
+        mPathPaint.setStrokeJoin(Paint.Join.ROUND);
 
         textPaint = new TextPaint();
         textPaint.setColor(textColor);
         textPaint.setTextSize(dip2px(getContext(),12));
         mPath = new Path();
+
+        circlePaint.setColor(textColor);
         circlePaint.setStyle(Paint.Style.FILL);
         circlePaint.setAntiAlias(true);
 
@@ -150,7 +161,7 @@ public class StatisticsView extends View {
         }
 
         //画左边的线
-        canvas.drawLine(bottomGap,getHeight()-leftGap,bottomGap,leftGap,mBorderPaint);
+       // canvas.drawLine(bottomGap,getHeight()-leftGap,bottomGap,leftGap,mBorderPaint);
 
 
         float fontHeight =(textPaint.getFontMetrics().descent-textPaint.getFontMetrics().ascent);
@@ -160,19 +171,23 @@ public class StatisticsView extends View {
         //写字：drawText(String text, int start, int end, Paint paint)
         //画圆：drawCircle(float cx, float cy, float radius, Paint paint)
         //画下边线
-        canvas.drawLine(bottomGap,getHeight()-leftGap,getWidth()-bottomGap,getHeight()-leftGap,mBorderPaint);
+       // canvas.drawLine(bottomGap,getHeight()-leftGap,getWidth()-bottomGap,getHeight()-leftGap,mBorderPaint);
         for (int i = 1;i<=bottomStr.length;i++){
             canvas.drawCircle(i*bottomGap,getHeight()-leftGap,6,circlePaint);
             canvas.drawText(bottomStr[i-1],i*bottomGap-(textPaint.measureText(bottomStr[i-1])/2),getHeight()-leftGap/2+fontHeight/2,textPaint);
         }
 
         canvas.drawText(title,bottomGap,leftGap/2,textPaint);
-        for (int i = 1;i<=dividerCount+1;i++){
+        for (int i = 1;i<=dividerCount+1;i=i+2){
              //画左边的字
             canvas.drawText(perValue*(i-1)+"",bottomGap/2-(textPaint.measureText(perValue*(i-1)+"")/2),(((dividerCount+2-i)))*leftGap+fontHeight/2,textPaint);
 
             //画横线
-            canvas.drawLine(bottomGap,getHeight()-((i)*leftGap),getWidth()-bottomGap,getHeight()-((i)*leftGap),mBorderPaint);
+            Path path =new Path();
+            path.moveTo(bottomGap,getHeight()-((i)*leftGap));
+            path.lineTo(getWidth()-bottomGap,getHeight()-((i)*leftGap));
+            canvas.drawPath(path,mBorderPaint);
+          //  canvas.drawLine(bottomGap,getHeight()-((i)*leftGap),getWidth()-bottomGap,getHeight()-((i)*leftGap),mBorderPaint);
         }
 
 
@@ -185,16 +200,14 @@ public class StatisticsView extends View {
             if (i==0){
                 mPath.moveTo(bottomGap,(dividerCount+1)*leftGap-(values[i]*leftGap/perValue));
             }else{
-                mPath.lineTo((i+1)*bottomGap,(dividerCount+1)*leftGap-(values[i]*leftGap/perValue));
+                mPath.lineTo((i+1)*bottomGap,(dividerCount+1)* leftGap-(values[i]*leftGap/perValue));
             }
             /**
              * 画轨迹圆点
              */
-            canvas.drawCircle((i+1)*bottomGap,(dividerCount+1)*leftGap-(values[i]*leftGap/perValue),6,circlePaint);
-            Log.d("yqy",""+values[i]*leftGap/perValue);
+           // canvas.drawCircle((i+1)*bottomGap,(dividerCount+1)*leftGap-(values[i]*leftGap/perValue),6,circlePaint);
         }
         canvas.drawPath(mPath,mPathPaint);
-
     }
 
     public static int dip2px(Context context, float dpValue) {

@@ -21,16 +21,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:background="#f4f4f4"
         android:layout_weight="9"
         android:layout_width="match_parent"
         android:layout_height="0dp">
+        <TextView
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="近七日用电情况 （单位 kwh）"
+            android:background="#1ec7ae"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
       <com.example.upproject.StatisticsView
-          android:background="#26c985"
+          app:pathColor="#ffffff"
+          app:textColor="#ffffff"
+          android:background="#1ec7ae"
           app:viewTitle="本周用电情况统计（单位 J）"
           android:id="@+id/statisticsView"
           android:layout_width="match_parent"
           android:layout_height="200dp"/>
+        <ImageView
+            android:background="#1ec7ae"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
     </LinearLayout>
     <LinearLayout
         android:background="#ffffff"
@@ -55,7 +70,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:text="自主调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
@@ -79,7 +94,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:text="优化调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>

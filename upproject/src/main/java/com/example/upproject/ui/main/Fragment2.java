@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.upproject.ui.main.ui_model.Model1;
+import com.example.upproject.ui.main.ui_model.Model2;
+import com.example.upproject.R;
+import com.example.upproject.StatisticsView;
 
 /**
  * Created by cjs on 2016/3/2.
@@ -31,8 +35,6 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         init();
-        zhexian.setBottomStr(new String[]{"星期一","星期二","星期三","星期四","星期五","星期六","星期天"});
-        zhexian.setValues(new float[]{10f,90f,33f,66f,42f,99f,0f});
     }
 
     private void init() {
@@ -43,6 +45,10 @@ public class Fragment2 extends Fragment implements View.OnClickListener{
 
         model1.setOnClickListener(this);
         model2.setOnClickListener(this);
+
+
+        zhexian.setBottomStr(new String[]{"星期一","星期二","星期三","星期四","星期五","星期六","星期天"});
+        zhexian.setValues(new float[]{10f,90f,33f,66f,42f,99f,8f});
 
     }
 
