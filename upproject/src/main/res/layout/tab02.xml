@@ -11,12 +11,12 @@
         android:layout_height="60dp"
         android:orientation="vertical">
         <TextView
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="智能控制"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textColor="#000000"/>
     </LinearLayout>
 

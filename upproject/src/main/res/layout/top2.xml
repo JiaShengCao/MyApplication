@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="50dp"
     android:background="#e6e6e6"
 
     android:orientation="vertical">
@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
-            android:layout_height="57dp">
+            android:layout_height="47dp">
          <ImageView
                 android:id="@+id/iv_bottom1"
                 android:src="@mipmap/myhome_selector"
@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"/>
         <TextView
+            android:textSize="12sp"
             android:textStyle="bold"
             android:id="@+id/textview1"
             android:textColor="#116eba"
@@ -42,7 +43,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
-            android:layout_height="57dp">
+            android:layout_height="47dp">
             <ImageView
                 android:id="@+id/iv_bottom2"
                 android:src="@mipmap/smart_unselector"
@@ -50,9 +51,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"/>
         <TextView
+            android:textSize="12sp"
             android:textStyle="bold"
             android:id="@+id/textview2"
-            android:textColor="#000000"
+            android:textColor="#888888"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -65,7 +67,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
-            android:layout_height="57dp">
+            android:layout_height="47dp">
             <ImageView
                 android:id="@+id/iv_bottom3"
                 android:src="@mipmap/my_unselector"
@@ -73,9 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"/>
         <TextView
+            android:textSize="12sp"
             android:textStyle="bold"
             android:id="@+id/textview3"
-            android:textColor="#000000"
+            android:textColor="#888888"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="match_parent"
