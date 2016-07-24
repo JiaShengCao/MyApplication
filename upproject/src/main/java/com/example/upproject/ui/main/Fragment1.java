@@ -33,12 +33,13 @@ public class Fragment1 extends Fragment {
     private View view;
     private ListView mlistview;
     private SimpleAdapter adapter;
+    private List<HashMap<String, Object>> data_hashMap;
     private List<HashMap<String, Object>> mHashMap;
     private HashMap<String, Object> map;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            adapter = new SimpleAdapter(getActivity(), getData(),
+            adapter = new SimpleAdapter(getActivity(), data_hashMap,
                     R.layout.item, new String[]{"image", "title", "content"}, new int[]
                     {R.id.item, R.id.tv_title, R.id.tv_content});
             mlistview.setAdapter(adapter);
@@ -48,7 +49,7 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        data_hashMap=getData();
     }
 
     @Nullable
@@ -107,6 +108,7 @@ public class Fragment1 extends Fragment {
         map.put("content", "air condition");
         mHashMap.add(map);
 
+
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.light);
         map.put("title", "电灯");
@@ -119,11 +121,13 @@ public class Fragment1 extends Fragment {
         map.put("content", "washer");
         mHashMap.add(map);
 
+
         map = new HashMap<String, Object>();
         map.put("image",  R.mipmap.elecar);
         map.put("title", "充电汽车");
         map.put("content", "ele car");
         mHashMap.add(map);
+
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.dishwash);

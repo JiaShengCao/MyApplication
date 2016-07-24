@@ -195,8 +195,8 @@ public class MainActivity extends FragmentActivity {
         iv_bottom1.setImageResource(R.mipmap.myhome_unselector);
         iv_bottom2.setImageResource(R.mipmap.smart_unselector);
         iv_bottom3.setImageResource(R.mipmap.my_unselector);
-        textView1.setTextColor(Color.BLACK);
-        textView2.setTextColor(Color.BLACK);
-        textView3.setTextColor(Color.BLACK);
+        textView1.setTextColor(Color.GRAY);
+        textView2.setTextColor(Color.GRAY);
+        textView3.setTextColor(Color.GRAY);
     }
 }
