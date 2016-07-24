@@ -15,19 +15,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
 
         </activity>
-        <activity android:name=".FirstListItem">
+        <activity android:name=".ui.main.ui_ietm_list.FirstListItem">
 
         </activity>
-        <activity android:name=".SecondListItem">
+        <activity android:name=".ui.main.ui_ietm_list.SecondListItem">
 
         </activity>
-        <activity android:name=".ThirdListItem">
+        <activity android:name=".ui.main.ui_ietm_list.ThirdListItem">
 
         </activity>
-        <activity android:name=".Listitem4">
+        <activity android:name=".ui.main.ui_ietm_list.Listitem4">
 
         </activity>
         <activity android:name=".Tolerate">
@@ -45,22 +45,16 @@
         <activity android:name=".Tolerate5">
 
         </activity>
-        <activity android:name=".ListIitem5">
+        <activity android:name=".ui.main.ui_ietm_list.ListIitem5">
 
         </activity>
         <activity android:name=".ResistActivity">
 
         </activity>
-        <activity android:name=".Model1">
+        <activity android:name=".ui.main.ui_model.Model1">
 
         </activity>
-        <activity android:name=".Model2">
-
-        </activity>
-        <activity android:name=".Model3">
-
-        </activity>
-        <activity android:name=".Model4">
+        <activity android:name=".ui.main.ui_model.Model2">
 
         </activity>
 

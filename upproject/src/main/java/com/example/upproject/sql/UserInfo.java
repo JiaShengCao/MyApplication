@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.sql;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.ui.main.ui_ietm_list;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.example.upproject.ConnectServerWithSocket;
+import com.example.upproject.R;
+import com.example.upproject.Tolerate5;
 
 /**
  * Created by cjs on 2016/3/13.

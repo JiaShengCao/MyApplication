@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.ui.main.ui_ietm_list;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,10 +15,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.upproject.ConnectServerWithSocket;
+import com.example.upproject.R;
+import com.example.upproject.Tolerate2;
+
 /**
  * Created by cjs on 2016/3/13.
  */
-public class ThirdListItem extends Activity {
+public class SecondListItem extends Activity {
     private ToggleButton toggleButton;
     private TextView state;
     private EditText newpower;
@@ -37,19 +41,19 @@ public class ThirdListItem extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.thirditem);
+        setContentView(R.layout.seconditem);
         init();
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ThirdListItem.this,Tolerate3.class);
+                Intent intent=new Intent(SecondListItem.this,Tolerate2.class);
                 startActivity(intent);
             }
         });
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendmsg="4 wash 20 ";
+                sendmsg="4 light 20 ";
                 ConnectServerWithSocket text1 = new ConnectServerWithSocket();
                 text1.setStr(sendmsg);
                 text1.start();
@@ -59,7 +63,7 @@ public class ThirdListItem extends Activity {
                     e.printStackTrace();
                 }
                 replay = text1.getReplayfromserver();
-                Log.e("refresh3",replay);
+                Log.e("refresh_wash",replay);
             }
         });
 
@@ -70,7 +74,7 @@ public class ThirdListItem extends Activity {
                 tv_power = (TextView) findViewById(R.id.gonglv);
                 power = newpower.getText().toString();
 
-                sendmsg="4 wash 00 "+power;
+                sendmsg="4 light 00 "+power;
                 ConnectServerWithSocket text1 = new ConnectServerWithSocket();
                 text1.setStr(sendmsg);
                 text1.start();
@@ -94,7 +98,7 @@ public class ThirdListItem extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    sendmsg="4 wash 11";
+                    sendmsg="4 light 11";
                     ConnectServerWithSocket text = new ConnectServerWithSocket();
                     text.setStr(sendmsg);
                     text.start();
@@ -108,7 +112,7 @@ public class ThirdListItem extends Activity {
                     message.what = 1;
                     handler.sendMessage(message);
                 } else {
-                    sendmsg="4 wash 10";
+                    sendmsg="4 light 10";
                     ConnectServerWithSocket text = new ConnectServerWithSocket();
                     text.setStr(sendmsg);
                     text.start();
@@ -146,7 +150,7 @@ public class ThirdListItem extends Activity {
             public void onClick(View v) {
                 newtime=et_worktime.getText().toString();
 
-                sendmsg="4 wash 01 "+newtime;
+                sendmsg="4 light 01 "+newtime;
                 ConnectServerWithSocket text1 = new ConnectServerWithSocket();
                 text1.setStr(sendmsg);
                 text1.start();
@@ -187,3 +191,4 @@ public class ThirdListItem extends Activity {
         }
     };
 }
+
