@@ -1,11 +1,8 @@
-package com.example.upproject;
+package com.example.upproject.ui.main;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.upproject.ConnectServerWithSocket;
+import com.example.upproject.R;
 
 /**
  * Created by cjs on 2016/3/2.

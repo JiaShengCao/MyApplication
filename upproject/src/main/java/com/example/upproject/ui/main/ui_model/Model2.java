@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.ui.main.ui_model;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.upproject.ConnectServerWithSocket;
+import com.example.upproject.R;
 
 /**
  * Created by cjs on 2016/3/17.
