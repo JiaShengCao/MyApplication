@@ -1,4 +1,4 @@
-package com.example.upproject;
+package com.example.upproject.sql;
 
 /**
  * Created by myalien on 2016/7/18.

@@ -1,16 +1,38 @@
 <component name="libraryTable">
   <library name="support-v4-23.2.0">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/res" />
+      <root url="jar://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar!/" />
+=======
+>>>>>>> master
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/res" />
       <root url="jar://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/res" />
+>>>>>>> a6260f6a24964be491d6df6d59d3a17920ce1d86
+>>>>>>> master
       <root url="jar://$PROJECT_DIR$/upproject/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+<<<<<<< HEAD
       <root url="jar://$PROJECT_DIR$/../../../Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.2.0/support-v4-23.2.0-sources.jar!/" />
+=======
+<<<<<<< HEAD
+      <root url="jar://$PROJECT_DIR$/../../../Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.2.0/support-v4-23.2.0-sources.jar!/" />
+=======
+      <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/23.2.0/support-v4-23.2.0-sources.jar!/" />
+>>>>>>> a6260f6a24964be491d6df6d59d3a17920ce1d86
+>>>>>>> master
     </SOURCES>
   </library>
 </component>
