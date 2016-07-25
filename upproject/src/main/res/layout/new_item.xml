@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:background="#0dd192"
+              android:background="#1ec7ae"
               android:orientation="vertical"
               android:layout_height="match_parent">
  <LinearLayout
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="30dp"
     android:orientation="horizontal"
     android:layout_weight="10"
     android:layout_width="match_parent"
@@ -32,17 +32,18 @@
             <TextView
                 android:textColor="#ffffff"
                 android:gravity="center"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="电灯"/>
             <TextView
+                android:id="@+id/tv_state1"
                 android:textColor="#e9e7e7"
                 android:gravity="center"
                 android:textSize="10sp"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:text="打开"/>
+                android:text="关闭"/>
         </LinearLayout>
             <ImageButton
                 android:background="@mipmap/whilt_line"
@@ -58,6 +59,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"/>
         <TextView
+            android:id="@+id/tv_state2"
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:layout_gravity="center"
@@ -97,15 +99,19 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <ToggleButton
+        <Button
+            android:id="@+id/btn_switch"
+            android:layout_marginTop="8dp"
             android:background="@mipmap/switch_off"
-            android:text="button1"
-            android:layout_weight="1"
-            android:textOn=" "
-            android:textOff=" "
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+            <TextView
+                android:gravity="center|top"
+                android:textSize="15sp"
+                android:text="开关"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <LinearLayout
@@ -114,11 +120,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
-            android:text="button2"
-            android:layout_weight="1"
+            android:id="@+id/btn_timing"
+            android:layout_marginTop="8dp"
+            android:background="@mipmap/dingshi2_on"
             android:layout_gravity="center"
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+            <TextView
+                android:gravity="center|top"
+                android:textSize="15sp"
+                android:text="定时"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <LinearLayout
@@ -127,7 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
-            android:text="button2"
+            android:id="@+id/btn_priority"
+            android:text="优先级"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:layout_width="80dp"

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.upproject.ui.main.ui_ietm_list.FirstListItem;
 import com.example.upproject.ui.main.ui_ietm_list.ListIitem5;
+import com.example.upproject.ui.main.ui_ietm_list.ListItem2;
 import com.example.upproject.ui.main.ui_ietm_list.Listitem4;
 import com.example.upproject.R;
 import com.example.upproject.ui.main.ui_ietm_list.SecondListItem;
@@ -36,12 +37,10 @@ public class Fragment1 extends Fragment {
     private List<HashMap<String, Object>> data_hashMap;
     private List<HashMap<String, Object>> mHashMap;
     private HashMap<String, Object> map;
+
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            adapter = new SimpleAdapter(getActivity(), data_hashMap,
-                    R.layout.item, new String[]{"image", "title", "content"}, new int[]
-                    {R.id.item, R.id.tv_title, R.id.tv_content});
             mlistview.setAdapter(adapter);
         }
     };
@@ -49,7 +48,7 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        data_hashMap=getData();
+
     }
 
     @Nullable
@@ -74,7 +73,7 @@ public class Fragment1 extends Fragment {
                         startActivity(intent1);
                         break;
                     case 1:
-                        Intent intent2 = new Intent(getActivity(), SecondListItem.class);
+                        Intent intent2 = new Intent(getActivity(), ListItem2.class);
                         startActivity(intent2);
                         break;
                     case 2:
@@ -95,10 +94,26 @@ public class Fragment1 extends Fragment {
                 }
             }
         });
-        new MyThread().start();
-
+               new MyThread().start();
     }
 
+
+
+
+//    新开一个线程避免阻塞UI
+    class MyThread extends Thread {
+        @Override
+        public void run() {
+            if (data_hashMap==null) {
+                data_hashMap = getData();
+            }
+            if (adapter==null) {
+                adapter = new SimpleAdapter(getActivity(), data_hashMap,
+                        R.layout.item, new String[]{"image", "title", "content"}, new int[]
+                        {R.id.item, R.id.tv_title, R.id.tv_content});
+            }
+            handler.sendEmptyMessage(0x123);
+        }
     //adapter的数据源
     public List<HashMap<String, Object>> getData() {
         mHashMap = new ArrayList<HashMap<String, Object>>();
@@ -138,14 +153,6 @@ public class Fragment1 extends Fragment {
 
         return mHashMap;
     }
-
-
-    //新开一个线程避免阻塞UI
-    class MyThread extends Thread {
-        @Override
-        public void run() {
-            handler.sendEmptyMessage(0x123);
-        }
     }
 }
 
