@@ -3,9 +3,9 @@
               android:layout_width="match_parent"
               android:background="#1ec7ae"
               android:orientation="vertical"
+              android:fitsSystemWindows="true"
               android:layout_height="match_parent">
  <LinearLayout
-    android:layout_marginTop="30dp"
     android:orientation="horizontal"
     android:layout_weight="10"
     android:layout_width="match_parent"
@@ -17,11 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal">
-        <ImageButton
-            android:background="#00000000"
-            android:layout_weight="1"
+        <Button
+            android:id="@+id/fanhui"
+            android:background="@mipmap/ic_launcher"
             android:layout_marginLeft="20dp"
-            android:src="@mipmap/ic_launcher"
             android:layout_width="40dp"
             android:layout_height="40dp"/>
         <LinearLayout
@@ -45,9 +44,9 @@
                 android:layout_height="25dp"
                 android:text="关闭"/>
         </LinearLayout>
-            <ImageButton
+            <Button
+                android:id="@+id/btn_init"
                 android:background="@mipmap/whilt_line"
-                android:layout_weight="1"
                 android:layout_marginRight="20dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
@@ -76,7 +75,7 @@
         android:layout_marginBottom="10dp"
         android:textSize="20sp"
         android:textColor="#ffffff"
-        android:text="已连续开启：1h"
+        android:text="已连续开启：0 h"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -85,7 +84,7 @@
         android:layout_marginLeft="20dp"
         android:textSize="20sp"
         android:textColor="#ffffff"
-        android:text="今日消耗电量：1kwh"
+        android:text="今日消耗电量：0 kwh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <LinearLayout
@@ -140,12 +139,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
+            android:layout_marginTop="8dp"
             android:id="@+id/btn_priority"
             android:text="优先级"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+            <TextView
+                android:gravity="center|top"
+                android:textSize="15sp"
+                android:text="优先级"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
     </LinearLayout>

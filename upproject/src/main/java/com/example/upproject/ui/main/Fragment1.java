@@ -50,7 +50,6 @@ public class Fragment1 extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
