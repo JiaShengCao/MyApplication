@@ -1,29 +1,24 @@
 package com.example.upproject.ui.main.ui_ietm_list;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.BitmapDrawable;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.CookieManager;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.PopupMenu;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.upproject.ConnectServerWithSocket;
 import com.example.upproject.R;
-
-import java.util.zip.Inflater;
 
 /**
  * Created by cjs on 2016/7/24.
@@ -46,7 +41,7 @@ public class ListItem2 extends Activity implements View.OnClickListener{
 
     private PopupWindow popupWindow;//弹出式菜单
 
-    private Button btn_power,btn_time;//弹出式菜单的两个按钮
+    private TextView btn_power,btn_time;//弹出式菜单的两个按钮
 
 
     private Handler handler=new Handler(){
@@ -155,7 +150,7 @@ public class ListItem2 extends Activity implements View.OnClickListener{
     private void initPopuptWindow() {
         View popupWindow_view=getLayoutInflater().inflate(R.layout.pop_window,null,false);
         //创建popupowindow实例，200,150为宽度和高度
-        popupWindow=new PopupWindow(popupWindow_view,170,200,true);
+        popupWindow=new PopupWindow(popupWindow_view,250,250,true);
         //设置动画效果
         popupWindow.setAnimationStyle(R.style.AnimationFade);
         //点击其他地方消失
@@ -170,17 +165,64 @@ public class ListItem2 extends Activity implements View.OnClickListener{
             }
         });
 
-        btn_power= (Button) popupWindow_view.findViewById(R.id.btn_power);
-        btn_time= (Button) popupWindow_view.findViewById(R.id.btn_time);
+        btn_power= (TextView) popupWindow_view.findViewById(R.id.btn_power);
+        btn_time= (TextView) popupWindow_view.findViewById(R.id.btn_time);
         btn_power.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //创建一个对话框
+                AlertDialog.Builder builder=new AlertDialog.Builder(ListItem2.this);
+                builder.setIcon(R.mipmap.ic_launcher);
+                builder.setTitle("请输入用电器功率");
+                View view= LayoutInflater.from(ListItem2.this).inflate(R.layout.et_power_dialog,null);
+                builder.setView(view);
+                final EditText et_power= (EditText) view.findViewById(R.id.et_power);
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                            String power= et_power.getText().toString().trim();
+                            Toast.makeText(ListItem2.this,"新设定的功率为"+power,Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.show();
+
+
                 Toast.makeText(getApplicationContext(),"点击了更改功率",Toast.LENGTH_SHORT).show();
             }
         });
         btn_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //创建一个对话框
+                AlertDialog.Builder builder=new AlertDialog.Builder(ListItem2.this);
+                builder.setIcon(R.mipmap.ic_launcher);
+                builder.setTitle("请输入单次工作时间");
+                View view= LayoutInflater.from(ListItem2.this).inflate(R.layout.et_time_dialog,null);
+                builder.setView(view);
+                final EditText et_power= (EditText) view.findViewById(R.id.et_time);
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String power= et_power.getText().toString().trim();
+                        Toast.makeText(ListItem2.this,"新设定的工作时间为"+power,Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.show();
+
                 Toast.makeText(getApplicationContext(),"点击了更改时间",Toast.LENGTH_SHORT).show();
             }
         });
