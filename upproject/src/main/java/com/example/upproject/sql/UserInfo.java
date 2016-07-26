@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by myalien on 2016/7/17.
  */
-public class UserInfo implements Serializable{
+public class UserInfo {
     public static final String APPLIANCES="_appliances";
     public static final String TIME = "time";
     public static final String POWER= "power";

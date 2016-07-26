@@ -21,7 +21,10 @@ import java.net.Socket;
  */
 public class ConnectServerWithSocket extends Thread {
     private String sendtoserver = null;
+
     private String replay = null;
+
+    private Handler mhandler;
     // cjs creat this to test git
 
     public void setStr(String str) {

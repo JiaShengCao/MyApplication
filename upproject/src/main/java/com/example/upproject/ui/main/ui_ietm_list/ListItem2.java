@@ -43,6 +43,10 @@ public class ListItem2 extends Activity implements View.OnClickListener{
 
     private TextView btn_power,btn_time;//弹出式菜单的两个按钮
 
+    private String replay;//服务器返回的消息
+
+    private int checkitem=0;
+
 
     private Handler handler=new Handler(){
         @Override
@@ -91,6 +95,7 @@ public class ListItem2 extends Activity implements View.OnClickListener{
         tv_state2= (TextView) findViewById(R.id.tv_state2);
     }
 
+    //电器界面按钮的点击事件
     @Override
     public void onClick(View v) {
 
@@ -107,6 +112,10 @@ public class ListItem2 extends Activity implements View.OnClickListener{
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                    replay=conn.getReplayfromserver();
+                    if (replay==null){
+                        Toast.makeText(getApplicationContext(),"网络连接失败",Toast.LENGTH_SHORT).show();
+                    }
 
                     Message msg=handler.obtainMessage();
                     msg.what=0;
@@ -122,6 +131,10 @@ public class ListItem2 extends Activity implements View.OnClickListener{
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    replay=conn.getReplayfromserver();
+                    if (replay==null){
+                        Toast.makeText(getApplicationContext(),"网络连接失败",Toast.LENGTH_SHORT).show();
+                    }
 
                     Message msg=handler.obtainMessage();
                     msg.what=1;
@@ -134,6 +147,31 @@ public class ListItem2 extends Activity implements View.OnClickListener{
             case R.id.btn_init:
                 getPopupWindow();
                 popupWindow.showAsDropDown(v);
+                break;
+            case R.id.btn_priority:
+                AlertDialog.Builder builder=new AlertDialog.Builder(ListItem2.this);
+                builder.setIcon(R.mipmap.ic_launcher);
+                builder.setTitle("请选择电灯的调度优先级");
+                final String[] priority={"1","2","3","4","5"};
+                builder.setSingleChoiceItems(priority,checkitem,new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        checkitem=which;
+                    }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(ListItem2.this,"优先级设置为： "+priority[checkitem],Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.show();
                 break;
         }
     }
