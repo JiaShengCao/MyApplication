@@ -3,6 +3,7 @@ package com.example.upproject.ui.main.ui_ietm_list;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.upproject.ConnectServerWithSocket;
 import com.example.upproject.R;
+import com.example.upproject.ui.main.TimePickerActivity;
 
 /**
  * Created by cjs on 2016/7/24.
@@ -173,6 +175,9 @@ public class ListItem2 extends Activity implements View.OnClickListener{
                 });
                 builder.show();
                 break;
+            case R.id.btn_timing:
+                Intent intent=new Intent(this, TimePickerActivity.class);
+                startActivity(intent);
         }
     }
 

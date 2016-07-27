@@ -60,6 +60,9 @@
         <activity android:name=".ui.main.ui_model.Model2">
 
         </activity>
+        <activity android:name=".ui.main.TimePickerActivity">
+
+        </activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET">
