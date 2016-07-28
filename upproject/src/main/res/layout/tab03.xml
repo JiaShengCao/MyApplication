@@ -7,14 +7,13 @@
     <LinearLayout
         android:background="#e6e6e6"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:orientation="vertical">
         <TextView
-            android:layout_marginTop="28dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="全部设备"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="个人账户"
             android:textSize="15sp"
             android:textColor="#000000"/>
     </LinearLayout>

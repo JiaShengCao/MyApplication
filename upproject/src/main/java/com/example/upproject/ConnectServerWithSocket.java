@@ -1,5 +1,13 @@
 package com.example.upproject;
 
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.widget.Toast;
+
+import com.example.upproject.ui.main.MainActivity;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +21,10 @@ import java.net.Socket;
  */
 public class ConnectServerWithSocket extends Thread {
     private String sendtoserver = null;
+
     private String replay = null;
+
+    private Handler mhandler;
     // cjs creat this to test git
 
     public void setStr(String str) {
@@ -58,7 +69,7 @@ public class ConnectServerWithSocket extends Thread {
 
         } catch (IOException e) {
             e.printStackTrace();
-            //System.out.println("what the hell");
+
         }
         super.run();
     }
