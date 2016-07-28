@@ -6,7 +6,7 @@
               android:orientation="vertical">
 
     <LinearLayout
-        android:background="#e6e6e6"
+        android:background="#1ec7ae"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="vertical">
@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:text="智能控制"
             android:textSize="15sp"
-            android:textColor="#000000"/>
+            android:textColor="#ffffff"/>
     </LinearLayout>
 
     <LinearLayout
@@ -45,6 +45,62 @@
             android:background="#1ec7ae"
             android:layout_width="match_parent"
             android:layout_height="30dp"/>
+        <LinearLayout
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textColor="#979797"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center"
+                    android:text="本月已消耗电量"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="#1ec7ae"
+                    android:gravity="center"
+                    android:layout_weight="1.5"
+                    android:text="98.6kwh"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textColor="#979797"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center"
+                    android:text="本月共为您节省电费"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="#1ec7ae"
+                    android:gravity="center"
+                    android:layout_weight="1.5"
+                    android:text="20.3元"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <ImageView
+            android:background="#c7c7c7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
     </LinearLayout>
     <LinearLayout
         android:background="#ffffff"
@@ -69,7 +125,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#000000"
+                android:textColor="#6c6c6c"
                 android:text="自主调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
@@ -93,7 +149,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="#000000"
+                android:textColor="#6c6c6c"
                 android:text="优化调度"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
