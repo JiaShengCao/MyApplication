@@ -17,15 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal">
-        <TextView
-            android:gravity="center|top"
-            android:textColor="#ffffff"
+        <Button
+            android:layout_marginTop="5dp"
+            android:background="@mipmap/fanhui"
             android:textSize="50sp"
-            android:text="@string/fanhui"
             android:id="@+id/fanhui"
             android:layout_marginLeft="20dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
         <LinearLayout
             android:layout_weight="10"
             android:layout_width="100dp"
