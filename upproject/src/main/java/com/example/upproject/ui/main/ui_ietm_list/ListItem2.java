@@ -27,7 +27,7 @@ import com.example.upproject.ui.main.TimePickerActivity;
  */
 public class ListItem2 extends Activity implements View.OnClickListener{
 
-    private Button btn_fanhui;//返回按钮
+    private TextView TV_fanhui;//返回按钮
 
     private Button btn_pop;//弹出式菜单
 
@@ -87,12 +87,12 @@ public class ListItem2 extends Activity implements View.OnClickListener{
         btn_switch= (Button) findViewById(R.id.btn_switch);
         btn_timing= (Button) findViewById(R.id.btn_timing);
         btn_priority= (Button) findViewById(R.id.btn_priority);
-        btn_fanhui= (Button) findViewById(R.id.fanhui);
+        TV_fanhui= (TextView) findViewById(R.id.fanhui);
         btn_pop.setOnClickListener(this);
         btn_switch.setOnClickListener(this);
         btn_priority.setOnClickListener(this);
         btn_timing.setOnClickListener(this);
-        btn_fanhui.setOnClickListener(this);
+        TV_fanhui.setOnClickListener(this);
         tv_state1= (TextView) findViewById(R.id.tv_state1);
         tv_state2= (TextView) findViewById(R.id.tv_state2);
     }

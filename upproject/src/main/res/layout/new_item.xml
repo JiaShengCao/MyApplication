@@ -17,13 +17,15 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal">
-        <Button
-            android:layout_marginTop="5dp"
+        <TextView
+            android:gravity="center|top"
+            android:textColor="#ffffff"
+            android:textSize="50sp"
+            android:text="@string/fanhui"
             android:id="@+id/fanhui"
-            android:background="@mipmap/ic_launcher"
             android:layout_marginLeft="20dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
         <LinearLayout
             android:layout_weight="10"
             android:layout_width="100dp"
@@ -45,15 +47,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:text="关闭"/>
+
         </LinearLayout>
             <Button
-                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
                 android:id="@+id/btn_init"
                 android:background="@mipmap/white_line"
                 android:layout_marginRight="20dp"
                 android:layout_width="35dp"
                 android:layout_height="35dp"/>
         </LinearLayout>
+
         <ImageView
             android:layout_marginTop="30dp"
             android:src="@mipmap/huo"

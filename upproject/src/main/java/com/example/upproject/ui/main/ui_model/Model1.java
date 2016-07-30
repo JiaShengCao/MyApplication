@@ -43,8 +43,9 @@ public class Model1 extends Activity {
             public void onClick(View v) {
                 begin=time_begin.getText().toString();
                 end=time_end.getText().toString();
-                sendmsg="5 1 "+begin+" "+end+" "+new_addnum+addname.substring(4);
-                Log.e("model_send_test",sendmsg);
+                if (addname!=null&&!addname.equals("")) {
+                    sendmsg = "5 1 " + begin + " " + end + " " + new_addnum + addname.substring(4);
+                }
                 ConnectServerWithSocket text = new ConnectServerWithSocket();
                 text.setStr(sendmsg);
                 text.start();
@@ -94,7 +95,6 @@ public class Model1 extends Activity {
                     if (device1.isChecked()){
                         addname+=" air";
                         addnum++;
-                        Toast.makeText(getApplicationContext(),"开启了"+new_addnum+"个用电器",Toast.LENGTH_SHORT).show();
                     }else {
                         addname=addname.replaceAll(" air","");
                         addnum--;
