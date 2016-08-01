@@ -36,6 +36,14 @@ public class Model1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window window = getWindow();
+
+        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams
+                .FLAG_TRANSLUCENT_STATUS);
+
+        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams
+                .FLAG_TRANSLUCENT_NAVIGATION);
+        setContentView(R.layout.model1);
         init();
         new_addnum=String.valueOf(addnum);
         sendmessage.setOnClickListener(new View.OnClickListener() {
@@ -62,14 +70,6 @@ public class Model1 extends Activity {
     }
 
     private void init(){
-        Window window = getWindow();
-
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams
-                .FLAG_TRANSLUCENT_STATUS);
-
-        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams
-                .FLAG_TRANSLUCENT_NAVIGATION);
-        setContentView(R.layout.model1);
         device1= (CheckBox) findViewById(R.id.use1);
         device2= (CheckBox) findViewById(R.id.use2);
         device3= (CheckBox) findViewById(R.id.use3);

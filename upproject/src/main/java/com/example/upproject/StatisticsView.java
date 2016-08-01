@@ -23,9 +23,7 @@ public class StatisticsView extends View {
     private Paint mBorderPaint; //画横纵轴
     private Paint circlePaint; //画坐标点的圆心
     private Paint mPathPaint; //画折线图
-
     private Path mPath;
-
     private int maxValue = 100;//纵轴最大值
     private int dividerCount = 10;//纵轴分割数量
     private int perValue = maxValue/dividerCount;//纵轴每个单位值
@@ -171,7 +169,6 @@ public class StatisticsView extends View {
         //写字：drawText(String text, int start, int end, Paint paint)
         //画圆：drawCircle(float cx, float cy, float radius, Paint paint)
         //画下边线
-       // canvas.drawLine(bottomGap,getHeight()-leftGap,getWidth()-bottomGap,getHeight()-leftGap,mBorderPaint);
         for (int i = 1;i<=bottomStr.length;i++){
             canvas.drawCircle(i*bottomGap,getHeight()-leftGap,6,circlePaint);
             canvas.drawText(bottomStr[i-1],i*bottomGap-(textPaint.measureText(bottomStr[i-1])/2),getHeight()-leftGap/2+fontHeight/2,textPaint);

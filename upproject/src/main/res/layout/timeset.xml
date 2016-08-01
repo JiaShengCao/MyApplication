@@ -5,6 +5,27 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
+    <LinearLayout
+        android:background="#1ec7ae"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="@string/fanhui"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="全部设备"
+            android:textSize="15sp"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -60,36 +81,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_7"
                     android:layout_weight="1"
                     android:text="日"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_1"
                     android:layout_weight="1"
                     android:text="一"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_2"
                     android:layout_weight="1"
                     android:text="二"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_3"
                     android:layout_weight="1"
                     android:text="三"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_4"
                     android:layout_weight="1"
                     android:text="四"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_5"
                     android:layout_weight="1"
                     android:text="五"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:textColor="@color/my_gray"
+                    android:id="@+id/btn_6"
                     android:layout_weight="1"
                     android:text="六"
                     android:layout_width="match_parent"
@@ -98,6 +133,8 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_commmitTime"
+                android:layout_marginTop="20dp"
                 android:background="#1ec7ae"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
