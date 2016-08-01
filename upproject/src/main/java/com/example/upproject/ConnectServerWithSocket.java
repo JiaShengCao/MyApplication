@@ -40,6 +40,11 @@ public class ConnectServerWithSocket extends Thread {
         return null;
     }
 
+    /**
+     * 功能：建立socket从而与服务器通信
+     * 输入：无
+     * 返回值：无
+     */
     @Override
     public void run() {
         try {

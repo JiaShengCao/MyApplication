@@ -96,6 +96,13 @@ public class ForgetPasswordActivity extends Activity implements OnClickListener 
         }
     }
 
+    /**
+     * 功能：在忘记密码是检查输入
+     * @param phone
+     * @param password
+     * @param code
+     * @return
+     */
     private boolean checkInput(String phone, String password, String code) {
         if (TextUtils.isEmpty(phone)) { // 电话号码为空
             ToastUtils.showShort(this, R.string.tip_phone_can_not_be_empty);
