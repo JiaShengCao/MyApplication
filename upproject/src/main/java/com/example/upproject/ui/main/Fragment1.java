@@ -48,7 +48,6 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
     @Nullable
     @Override
@@ -108,8 +107,8 @@ public class Fragment1 extends Fragment {
             }
             if (adapter==null) {
                 adapter = new SimpleAdapter(getActivity(), data_hashMap,
-                        R.layout.item, new String[]{"image", "title", "content"}, new int[]
-                        {R.id.item, R.id.tv_title, R.id.tv_content});
+                        R.layout.item, new String[]{"image", "title"}, new int[]
+                        {R.id.item, R.id.tv_title});
             }
             handler.sendEmptyMessage(0x123);
         }
@@ -119,34 +118,29 @@ public class Fragment1 extends Fragment {
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.kongtiao);
         map.put("title", "空调");
-        map.put("content", "air condition");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.light);
         map.put("title", "电灯");
-        map.put("content", "light");
         mHashMap.add(map);
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.wash);
         map.put("title", "洗衣机");
-        map.put("content", "washer");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image",  R.mipmap.elecar);
         map.put("title", "充电汽车");
-        map.put("content", "ele car");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.dishwash);
         map.put("title", "洗碗机");
-        map.put("content", "dish_washing");
         mHashMap.add(map);
 
 

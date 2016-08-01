@@ -18,17 +18,20 @@
         android:layout_height="60dp"
         android:orientation="horizontal">
         <Button
+            android:layout_marginTop="5dp"
+            android:background="@mipmap/fanhui"
+            android:textSize="50sp"
             android:id="@+id/fanhui"
-            android:background="@mipmap/ic_launcher"
             android:layout_marginLeft="20dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
         <LinearLayout
             android:layout_weight="10"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:orientation="vertical">
             <TextView
+                android:layout_marginTop="5dp"
                 android:textColor="#ffffff"
                 android:gravity="center"
                 android:textSize="20sp"
@@ -43,14 +46,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:text="关闭"/>
+
         </LinearLayout>
             <Button
+                android:layout_gravity="center"
                 android:id="@+id/btn_init"
-                android:background="@mipmap/whilt_line"
+                android:background="@mipmap/white_line"
                 android:layout_marginRight="20dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"/>
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
         </LinearLayout>
+
         <ImageView
             android:layout_marginTop="30dp"
             android:src="@mipmap/huo"
