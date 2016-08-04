@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+<EditText
+    android:background="@drawable/edittext_selector"
+    android:gravity="center"
+    android:id="@+id/et_power"
+    android:hint="功率设置 (单位 kw)"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+</LinearLayout>

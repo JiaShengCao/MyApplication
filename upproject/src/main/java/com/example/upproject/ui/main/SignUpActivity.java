@@ -13,7 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
 
+import com.example.upproject.ConnectServerWithSocket;
 import com.example.upproject.R;
 import com.example.upproject.ResistActivity;
 import com.example.upproject.ui.main.CleanEditText;
@@ -95,7 +97,26 @@ public class SignUpActivity extends Activity implements OnClickListener {
         String code = verifyCodeEdit.getText().toString().trim();
 
         if (checkInput(phone, password, code)) {
-            // TODO:请求服务端注册账号
+            String sendmsg="2 "+phone+" "+phone+" 1"+" 2";
+            ConnectServerWithSocket text = new ConnectServerWithSocket();
+            text.setStr(sendmsg);
+            text.start();
+            try {
+                text.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            String replay = text.getReplayfromserver();
+            if(replay.equals("1"))
+            {
+                ToastUtils.showShort(this,"注册成功");
+                Intent intent =new Intent(this, ResistActivity.class);
+                startActivity(intent);
+            }
+            else
+            {
+                ToastUtils.showShort(this,"注册失败，请稍后重试");
+            }
         }
     }
 
@@ -130,7 +151,9 @@ public class SignUpActivity extends Activity implements OnClickListener {
                 // TODO 请求接口发送验证码
                 codeManager.getVerifyCode(VerifyCodeManager.REGISTER);
                 break;
-
+            case R.id.btn_create_account:
+                commit();
+                break;
             default:
                 break;
         }

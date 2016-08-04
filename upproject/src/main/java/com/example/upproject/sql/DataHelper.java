@@ -29,7 +29,10 @@ public class DataHelper {
         dbHelper.close();
     }
 
-    // 设置电器的的TIME、POWER、STATE、TOLERANCE的记录,从数据库中的得到数据然后返回一个类列表用于更新客户端的值
+    /**
+     * 功能： 设置电器的的TIME、POWER、STATE、TOLERANCE的记录,从数据库中的得到数据然后返回一个类列表用于更新客户端的值
+      * @return
+     */
     public List<UserInfo> GetAppList() {
         List<UserInfo> userList = new ArrayList<UserInfo>();
         Cursor cursor = db.query(SqilteHelper.TB_NAME,null,null,null,null,null,
@@ -50,7 +53,11 @@ public class DataHelper {
     }
 
 
-    // 判断users表中的是否包含某个Appliance的记录
+    /**
+     * 功能：判断users表中的是否包含某个Appliance的记录
+     * @param Appliances
+     * @return
+     */
     public Boolean HaveAppInfo(String Appliances) {
         Boolean b = false;
         Cursor cursor = db.query(SqilteHelper.TB_NAME, null, UserInfo.APPLIANCES
@@ -61,10 +68,9 @@ public class DataHelper {
         return b;
     }
 
-    // 更新users表的记录，根据Appliance更新其余各项
 
     /**
-     *
+     *功能：更新users表的记录，根据Appliance更新其余各项
      * @param app 表项的键值
      * @param column 将要更新的表的属性值
      * @param newvalues 属性对应的新值
@@ -78,7 +84,12 @@ public class DataHelper {
         return id;
     }
 
-    // 添加app表的记录
+    /**
+     *功能：添加app表的记录
+     * @param app
+     * @return
+     */
+
     public Long SaveAppInfo(UserInfo app) {
         ContentValues values = new ContentValues();
         values.put(UserInfo.APPLIANCES, app.getdbAppliance());
@@ -91,7 +102,11 @@ public class DataHelper {
         return uid;
     }
 
-    // 删除app表的记录
+    /**
+     * 功能:删除app表的记录
+     * @param app
+     * @return
+     */
     public int DelAppInfo(String app) {
         int id = db.delete(SqilteHelper.TB_NAME,
                 UserInfo.APPLIANCES + "=?", new String[]{app});
@@ -99,7 +114,14 @@ public class DataHelper {
         return id;
     }
 
-    //得到某个app的信息
+
+
+    /**
+     *功能:得到某个app的信息
+     * @param app
+     * @param userList
+     * @return
+     */
     public static UserInfo getUserByName(String app,List<UserInfo> userList){
         UserInfo userInfo = null;
         int size = userList.size();

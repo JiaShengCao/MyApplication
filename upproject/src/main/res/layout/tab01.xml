@@ -6,32 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <LinearLayout
-        android:background="#e6e6e6"
+        android:background="#1ec7ae"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:orientation="vertical">
     <TextView
-        android:layout_marginTop="28dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="全部设备"
         android:textSize="15sp"
-        android:textColor="#000000"/>
+        android:textColor="#ffffff"/>
     </LinearLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@mipmap/title1"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:text="联网电器："
-        android:textSize="20sp"/>
-
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"

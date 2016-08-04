@@ -88,6 +88,10 @@ public class ResistActivity extends Activity implements View.OnClickListener{
         return false;
     }
 */
+    /**
+     * 功能:主页面转到不同的其他界面
+     * @param v
+     */
     public void onClick(View v) {
         Intent intent = null;
         switch (v.getId()) {

@@ -3,6 +3,7 @@ package com.example.upproject.utils;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
+import android.preference.PreferenceActivity;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
