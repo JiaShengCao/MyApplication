@@ -19,9 +19,13 @@ import com.example.upproject.StatisticsView;
  */
 //功能待定
 public class Fragment2 extends Fragment implements View.OnClickListener{
+
     private View view;
-    private StatisticsView zhexian;
+
+    private StatisticsView zhexian;//折线统计图
+
     private ImageButton model1;//立即开启模式
+
     private ImageButton model2;//定时开启模式
 
     @Nullable

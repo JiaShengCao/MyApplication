@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.upproject.ui.main.ui_ietm_list.FirstListItem;
 import com.example.upproject.ui.main.ui_ietm_list.ListIitem5;
+import com.example.upproject.ui.main.ui_ietm_list.ListItem2;
 import com.example.upproject.ui.main.ui_ietm_list.Listitem4;
 import com.example.upproject.R;
 import com.example.upproject.ui.main.ui_ietm_list.SecondListItem;
@@ -36,12 +37,10 @@ public class Fragment1 extends Fragment {
     private List<HashMap<String, Object>> data_hashMap;
     private List<HashMap<String, Object>> mHashMap;
     private HashMap<String, Object> map;
+
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            adapter = new SimpleAdapter(getActivity(), data_hashMap,
-                    R.layout.item, new String[]{"image", "title", "content"}, new int[]
-                    {R.id.item, R.id.tv_title, R.id.tv_content});
             mlistview.setAdapter(adapter);
         }
     };
@@ -49,9 +48,7 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        data_hashMap=getData();
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
@@ -74,7 +71,7 @@ public class Fragment1 extends Fragment {
                         startActivity(intent1);
                         break;
                     case 1:
-                        Intent intent2 = new Intent(getActivity(), SecondListItem.class);
+                        Intent intent2 = new Intent(getActivity(), ListItem2.class);
                         startActivity(intent2);
                         break;
                     case 2:
@@ -95,57 +92,60 @@ public class Fragment1 extends Fragment {
                 }
             }
         });
-        new MyThread().start();
-
+               new MyThread().start();
     }
 
+
+
+
+//    新开一个线程避免阻塞UI
+    class MyThread extends Thread {
+        @Override
+        public void run() {
+            if (data_hashMap==null) {
+                data_hashMap = getData();
+            }
+            if (adapter==null) {
+                adapter = new SimpleAdapter(getActivity(), data_hashMap,
+                        R.layout.item, new String[]{"image", "title"}, new int[]
+                        {R.id.item, R.id.tv_title});
+            }
+            handler.sendEmptyMessage(0x123);
+        }
     //adapter的数据源
     public List<HashMap<String, Object>> getData() {
         mHashMap = new ArrayList<HashMap<String, Object>>();
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.kongtiao);
         map.put("title", "空调");
-        map.put("content", "air condition");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.light);
         map.put("title", "电灯");
-        map.put("content", "light");
         mHashMap.add(map);
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.wash);
         map.put("title", "洗衣机");
-        map.put("content", "washer");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image",  R.mipmap.elecar);
         map.put("title", "充电汽车");
-        map.put("content", "ele car");
         mHashMap.add(map);
 
 
         map = new HashMap<String, Object>();
         map.put("image", R.mipmap.dishwash);
         map.put("title", "洗碗机");
-        map.put("content", "dish_washing");
         mHashMap.add(map);
 
 
         return mHashMap;
     }
-
-
-    //新开一个线程避免阻塞UI
-    class MyThread extends Thread {
-        @Override
-        public void run() {
-            handler.sendEmptyMessage(0x123);
-        }
     }
 }
 
