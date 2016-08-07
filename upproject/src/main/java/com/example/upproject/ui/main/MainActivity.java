@@ -169,15 +169,15 @@ public class MainActivity extends FragmentActivity {
                 resetTextView();
                 switch (position){
                     case 0:
-                        textView1.setTextColor(Color.parseColor("#116eba"));
+                        textView1.setTextColor(Color.parseColor("#1ec7ae"));
                         iv_bottom1.setImageResource(R.mipmap.myhome_selector);
                         break;
                     case 1:
-                        textView2.setTextColor(Color.parseColor("#116eba"));
+                        textView2.setTextColor(Color.parseColor("#1ec7ae"));
                         iv_bottom2.setImageResource(R.mipmap.smart_selector);
                         break;
                     case 2:
-                        textView3.setTextColor(Color.parseColor("#116eba"));
+                        textView3.setTextColor(Color.parseColor("#1ec7ae"));
                         iv_bottom3.setImageResource(R.mipmap.my_selector);
                         break;
                 }

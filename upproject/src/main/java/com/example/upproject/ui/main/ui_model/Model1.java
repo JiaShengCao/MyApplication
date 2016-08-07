@@ -31,6 +31,7 @@ public class Model1 extends Activity {
     private String begin;
     private String end;
     private String new_addnum;
+    private Button btn_back;
 
 
     @Override
@@ -70,6 +71,7 @@ public class Model1 extends Activity {
     }
 
     private void init(){
+        btn_back= (Button) findViewById(R.id.back) ;
         device1= (CheckBox) findViewById(R.id.use1);
         device2= (CheckBox) findViewById(R.id.use2);
         device3= (CheckBox) findViewById(R.id.use3);
@@ -79,6 +81,12 @@ public class Model1 extends Activity {
         time_end= (EditText) findViewById(R.id.time_end);
         sendmessage= (Button) findViewById(R.id.sendmessage);
 
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         device1.setOnClickListener(checklistener);
         device2.setOnClickListener(checklistener);
         device3.setOnClickListener(checklistener);

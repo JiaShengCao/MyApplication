@@ -18,13 +18,12 @@
         android:layout_height="60dp"
         android:orientation="horizontal">
         <Button
-            android:layout_marginTop="5dp"
-            android:background="@mipmap/fanhui"
-            android:textSize="50sp"
+            android:layout_gravity="center"
+            android:background="@mipmap/back"
             android:id="@+id/fanhui"
             android:layout_marginLeft="20dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
         <LinearLayout
             android:layout_weight="10"
             android:layout_width="100dp"
@@ -145,9 +144,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
+            android:background="@mipmap/youxianji"
             android:layout_marginTop="8dp"
             android:id="@+id/btn_priority"
-            android:text="优先级"
             android:layout_gravity="center"
             android:layout_width="60dp"
             android:layout_height="60dp"/>
