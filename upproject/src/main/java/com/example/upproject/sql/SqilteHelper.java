@@ -16,6 +16,10 @@ public class SqilteHelper extends SQLiteOpenHelper{
         super(context, name, factory, version);
     }
 
+    /**
+     * 功能：创建数据库
+     * @param db
+     */
     public void onCreate(SQLiteDatabase db) {
         db.execSQL( "CREATE TABLE IF NOT EXISTS "+
                 TB_NAME+ "("+
@@ -28,6 +32,13 @@ public class SqilteHelper extends SQLiteOpenHelper{
         );
         Log. e("Database" ,"onCreate" );
     }
+
+    /**
+     * 
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL( "DROP TABLE IF EXISTS " + TB_NAME );
         onCreate(db);
