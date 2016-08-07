@@ -27,6 +27,8 @@ public class TimePickerActivity extends Activity implements View.OnClickListener
 
     private Button btn_commit_time;//提交按钮
 
+    private Button btn_back;//返回按钮
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +44,13 @@ public class TimePickerActivity extends Activity implements View.OnClickListener
         initview();
     }
 
+
     private void initstate() {
         state_1 = state_2 = state_3 = state_4 = state_5 = state_6 = state_7 = false;
     }
 
     private void initview() {
+        btn_back= (Button) findViewById(R.id.back);
         timePicker_begin = (TimePicker) findViewById(R.id.timepicker_begin);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_2 = (Button) findViewById(R.id.btn_2);
@@ -63,6 +67,7 @@ public class TimePickerActivity extends Activity implements View.OnClickListener
         btn_5.setOnClickListener(this);
         btn_6.setOnClickListener(this);
         btn_7.setOnClickListener(this);
+        btn_back.setOnClickListener(this);
         btn_commit_time.setOnClickListener(this);
         timePicker_begin.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
@@ -76,6 +81,9 @@ public class TimePickerActivity extends Activity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.back:
+                finish();
+                break;
             case R.id.btn_1:
                 if (state_1 == false) {
                    btn_1.setTextColor(getResources().getColor(R.color.my_ZhuTi));

@@ -158,9 +158,6 @@ public class StatisticsView extends View {
             return;
         }
 
-        //画左边的线
-       // canvas.drawLine(bottomGap,getHeight()-leftGap,bottomGap,leftGap,mBorderPaint);
-
 
         float fontHeight =(textPaint.getFontMetrics().descent-textPaint.getFontMetrics().ascent);
 
