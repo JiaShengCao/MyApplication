@@ -1,3 +1,3 @@
 # MyApplication
-project of lab
-A project to control  family electricity
+
+#A project to control  family electricity
